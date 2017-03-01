@@ -17,7 +17,7 @@ services:
     image: centos:7
     ports:
       - "1338:1338"
-    user: root
+    user: broker
     command: ["entrypoint.sh"]
     depends_on:
       - etcd
