@@ -21,6 +21,9 @@ else
   echo "Got OPENSHIFT credentials."
 fi
 
+id
+echo "USER: $UID"
+
 oc-login.sh
 
 sed -i "s|{{DOCKERHUB_USER}}|${DOCKERHUB_USER}|" $ASB_CONF
