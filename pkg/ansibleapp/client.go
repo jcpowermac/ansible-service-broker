@@ -36,7 +36,7 @@ var DockerSocket = "unix:///var/run/docker.sock"
 type ClusterConfig struct {
 	Target   string
 	User     string
-	Password string
+	Password string `yaml:"pass"`
 }
 
 type Client struct {
