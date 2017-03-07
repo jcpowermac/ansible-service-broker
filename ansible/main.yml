@@ -71,6 +71,10 @@
         target: build
       environment:
         PATH: "{{ansible_env.PATH}}:/usr/local/go/bin"
+    - name: Record broker sha
+      shell: git rev-parse HEAD > /usr/local/ansible-service-broker/sha
+      args:
+        chdir: /opt/go/src/github.com/fusor/ansible-service-broker
     - name: Install ansible-service-broker
       copy: remote_src=True src={{item.src}} dest={{item.dest}} mode={{item.mode}}
       with_items:
