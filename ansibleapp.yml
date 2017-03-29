@@ -20,3 +20,6 @@ parameters:
   - name: openshift_pass
     description: Openshift Pass
     type: string
+  - name: org
+    description: Organization for Apps
+    type: string

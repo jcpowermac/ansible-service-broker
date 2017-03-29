@@ -30,5 +30,6 @@ sed -i "s|{{DOCKERHUB_PASS}}|${DOCKERHUB_PASS}|" $ASB_CONF
 sed -i "s|{{OPENSHIFT_TARGET}}|${OPENSHIFT_TARGET}|" $ASB_CONF
 sed -i "s|{{OPENSHIFT_USER}}|${OPENSHIFT_USER}|" $ASB_CONF
 sed -i "s|{{OPENSHIFT_PASS}}|${OPENSHIFT_PASS}|" $ASB_CONF
+sed -i "s|{{ORG}}|${ORG}|" $ASB_CONF
 
 ansible-service-broker

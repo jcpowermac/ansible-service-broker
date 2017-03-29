@@ -29,4 +29,5 @@ services:
       - "OPENSHIFT_TARGET={{ '{{openshift_target}}' }}"
       - "OPENSHIFT_USER={{ '{{openshift_user}}' }}"
       - "OPENSHIFT_PASS={{ '{{openshift_pass}}' }}"
+      - "ORG={{ '{{org}}' }}"
 registries: {}

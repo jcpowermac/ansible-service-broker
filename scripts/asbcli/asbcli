@@ -560,6 +560,10 @@ def subcmd_up_parser(parser, subcmd):
         '--dockerhub-pass', action='store', dest='dockerhub_pass',
         help=u'Dockerhub pass. Used to communicate with dockerhub registry.',
     )
+    subcmd.add_argument(
+        '--org', action='store', dest='org',
+        help=u'org for ansibleapps',
+    )
 
 
 def cmdrun_connect(**kwargs):
@@ -572,6 +576,7 @@ def cmdrun_up(**kwargs):
     openshift_pass = kwargs['openshift_pass']
     dockerhub_user = kwargs['dockerhub_user']
     dockerhub_pass = kwargs['dockerhub_pass']
+    org = kwargs['org']
 
     if not openshift_pass:
         openshift_pass = getpass.getpass('Enter cluster password: ')
@@ -595,6 +600,7 @@ def cmdrun_up(**kwargs):
         '-e', 'openshift_target=%s' % cluster,
         '-e', 'openshift_user=%s' % openshift_user,
         '-e', 'openshift_pass=%s' % openshift_pass,
+        '-e', 'org=%s' % org,
     ]
 
     brokerup_p = Popen(brokerup_cmd, stdin=PIPE, stdout=PIPE, stderr=PIPE)
